@@ -1,0 +1,30 @@
+{
+    "name": "social-media/common",
+	"type": "library",
+    "description": "Core components for the Social Media PHP library",
+    "keywords": [
+        "social media",
+        "common"
+    ],
+    "homepage": "https://github.com/social-media/social-media-common",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeroen Desloovere",
+            "email": "info@jeroendesloovere.be",
+            "homepage": "http://jeroendesloovere.be",
+			"role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "SocialMedia\\": "src/"
+        }
+    }
+}
