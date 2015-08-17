@@ -16,8 +16,9 @@ $post = new FacebookPostPublish(
 $service = new FacebookService();
 
 // dispatch new Event
-$this->get('event_listener')->dispatch(
-    SocialMediaPostPublishEvent(
+$this->get('event_dispatcher')->dispatch(
+    SocialMediaEvents::POST_SUBMITTED,
+    SocialMediaPublishEvent(
         $post,
         $service
     )
@@ -39,8 +40,9 @@ $post = new FacebookPostUnpublish(
 $service = new FacebookService();
 
 // dispatch new Event
-$this->get('event_listener')->dispatch(
-    SocialMediaPostUnpublishEvent(
+$this->get('event_dispatcher')->dispatch(
+    SocialMediaEvents::POST_DELETED,
+    SocialMediaUnpublishEvent(
         $post,
         $service
     )
@@ -61,8 +63,9 @@ $album = new FacebookAlbumPublish(
 $service = new FacebookService();
 
 // dispatch new Event
-$this->get('event_listener')->dispatch(
-    SocialMediaAlbumPublishEvent(
+$this->get('event_dispatcher')->dispatch(
+    SocialMediaEvents::ALBUM_SUBMITTED,
+    SocialMediaPublishEvent(
         $album,
         $service
     )
@@ -84,8 +87,9 @@ $album = new FacebookAlbumUnpublish(
 $service = new FacebookService();
 
 // dispatch new Event
-$this->get('event_listener')->dispatch(
-    SocialMediaAlbumUnpublishEvent(
+$this->get('event_dispatcher')->dispatch(
+    SocialMediaEvents::ALBUM_DELETED,
+    SocialMediaUnpublishEvent(
         $album,
         $service
     )
