@@ -74,6 +74,8 @@ $this->get('event_dispatcher')->dispatch(
 
 ### How unpublishing an album to Facebook should work.
 
+> Note: don't know if using an album identifier could work, I guess I should add all identifiers of the individual images.
+
 ```php
 // facebook album id
 $identifier = '126577990374899_1489744286461266';
@@ -103,6 +105,11 @@ $this->get('event_dispatcher')->dispatch(
 * In Add.php or Edit.php, we should **dispatch Event**
 * We should add an EventListener per SocialMediaPlatform, which uses code form the above examples.
 
-## What about a module using multiple social media platforms
+**What about a module using multiple social media platforms**
 
-* We should create an Event listener for every separate social media platform. Because titles or descriptions or ... should be different.
+* We should create an Event Listener for every separate social media platform, but for the same event. Because titles or descriptions or ... should be different to every platform.
+
+**I want my module to save the identifiers in a timeline**
+
+* We should use (create) an extra level, which fetches all Publish/Unpublish Events and checks the database for more information.
+
