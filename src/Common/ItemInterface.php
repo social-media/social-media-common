@@ -10,11 +10,11 @@ namespace SocialMedia\Common;
  */
 
 /**
- * Post you want to publish/unpublish
+ * Item you want to publish/unpublish
  *
  * @author Jeroen Desloovere <info@jeroendesloovere.be>
  */
-interface PostInterface
+interface ItemInterface
 {
     /**
      * Construct
